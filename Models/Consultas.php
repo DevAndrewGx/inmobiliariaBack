@@ -52,5 +52,101 @@
 
 
         }
+
+        public function registrarInmueble($tipo, $caegoria, $precio, $metros, $ciudad, $barrio, $foto) {
+
+            $objConexion = new Conexion();
+            $conexion = $objConexion ->get_conexion();
+
+            $insertar = "INSERT INTO inmuebles (tipo, categoria, precio, tamano, ciudad, barrio, foto) VALUES(:tipo, :categoria, :precio, :tamano, :ciudad, :barrio, :foto)" ;
+
+            $statement = $conexion -> prepare($insertar);
+
+            $statement->bindParam(":tipo", $tipo);
+            $statement->bindParam(":categoria", $categoria);
+            $statement->bindParam(":precio", $precio);
+            $statement->bindParam(":tamano", $tamano);
+            $statement->bindParam(":ciudad", $ciudad);
+            $statement->bindParam(":barrio", $barrio);
+            $statement->bindParam(":foto", $foto);
+
+            $statement -> execute();
+        }
+
+        public function consultarInmuebles() {
+            $f = null;
+
+            $objeConexion = new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+
+            $consultar = "SELECT * FROM inmuebles ORDER BY id DESC";
+
+            $statement = $conexion -> prepare($consultar);
+
+            $statement -> execute();
+
+            while($resultado =  $statement->fetch()) {
+                $f[] = $statement;
+            }
+
+            return $f;
+        }
+
+        public function eliminarInmueblies($id) {
+            $objConexion = new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+
+            $eliminar = "DELETE FROM inmuebles WHERE id=:id";
+
+            $statement = $conexion -> preapare($eliminar);
+
+            $statement -> bindParam(":id",$id);
+
+            $statement -> execute();
+
+            echo '<script>alert("Inmueble eliminado")</script>' ;
+            echo "<script>location.href='../Views/inmoApartamentos.php'</script>";
+        }
+    
+
+        public function consultarInmuebleEdit($id) {
+
+            $objConexion = new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+            $consultar = "SELECT * FROM inmuebles WHERE id=:id ";
+            $statement = $conexion -> prepare($consultar);
+            $statement -> bindParam(":id",$id)
+            $statement -> execute();
+
+            while($resultado =  $statement->fetch()) {
+                $f[] = $statement;
+            }
+
+
+
+           return $f
+        }
+
+        public function modificarInmuegle($id, $tipo, $categoria, $precio, $metros, $ciudad, $barrio) { 
+            $objConexion =  new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+
+            $actualizar = "UPDATE inmuebles SET tipo=:tipo, categoria=:categoria, precio=:precio, tamano=:metros, ciudad=:ciudad, barrio=:barrio WHERE id=:id";
+
+            $statement = $conexion ->prepare($actualizar);
+
+            $statement -> bindParam(":id",$id)
+            $statment-> bindParam(":tipo",$tipo);
+            $statment-> bindParam(":categoria",$categoria);
+            $statment-> bindParam(":precio",$precio);
+            $statment-> bindParam(":tipo",$tipo);
+            $statment-> bindParam(":tipo",$tipo);
+
+        }
     }
+
 ?>

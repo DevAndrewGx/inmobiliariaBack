@@ -26,12 +26,12 @@
                     $_SESSION['rol'] = $f['rol']; 
                     $_SESSION['auntenticado'] = "SI";
 
-                    if($f('rol') == "Usuario") {
+                    if($f['rol'] == "Usuario") {
                         echo '<script>alert("Bienvenido Usuario :)")</script>' ;
-                        echo "<script>location.href='../Views/login.php'</script>"; 
+                        echo "<script>location.href='../Views/inmoApartam.php'</script>"; 
                     }else { 
                         echo '<script>alert("Bienvenido Inmobiliaria")</script>' ;
-                        echo "<script>location.href='../Views/login.php'</script>"; 
+                        echo "<script>location.href='../Views/inmoApartamentos.php'</script>"; 
                     }
                 }else {
                     echo '<script>alert("La clave es incorrecta")</script>' ;

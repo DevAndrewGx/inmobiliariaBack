@@ -1,3 +1,10 @@
+<?php 
+    require_once("../Models/Conexion.php");
+    require_once("../Models/Consultas.php");
+    require_once("../Controllers/mostrarInfo.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,30 +21,7 @@
             <a href="InmoApartamentos.html" class="back"></a>
             <a href="index.html" class="close"></a>
         </header>
-        <form>
-            
-            <div class="select">
-                <select>
-                    <option value="">Seleccione Tipo de Inmueble...</option>
-                    <option value="Apartamento">Apartamento</option>
-                    <option value="Aparta Estudio">Aparta Estudio</option>
-                    <option value="Casa">Casa</option>
-                </select>
-            </div>
-            <div class="select">
-                <select>
-                    <option value="">Seleccione Categoría...</option>
-                    <option value="Arriendo">Arriendo</option>
-                    <option value="Venta">Venta</option>
-                </select>
-            </div>
-            <input type="number" placeholder="Precio...">
-            <input type="number" placeholder="Tamaño...">
-            <input type="text" placeholder="Ciudad...">
-            <input type="text" placeholder="Localidad/Barrio...">
-            
-            <button class="btn-home">Modificar</button>
-        </form>
+      
     </main>
 </body>
 </html>

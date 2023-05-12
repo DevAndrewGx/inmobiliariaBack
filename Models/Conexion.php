@@ -6,7 +6,7 @@
             $user = "root";
             $password = "";
             $host = "localhost";
-            $db = "imueble_ideal";
+            $db = "inmueble_ideal";
 
             // Cramos un objeto conexino PDO
 
