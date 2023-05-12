@@ -118,7 +118,7 @@
 
             $consultar = "SELECT * FROM inmuebles WHERE id=:id ";
             $statement = $conexion -> prepare($consultar);
-            $statement -> bindParam(":id",$id)
+            $statement -> bindParam(":id",$id);
             $statement -> execute();
 
             while($resultado =  $statement->fetch()) {
@@ -127,7 +127,7 @@
 
 
 
-           return $f
+           return $f;
         }
 
         public function modificarInmuegle($id, $tipo, $categoria, $precio, $metros, $ciudad, $barrio) { 
@@ -143,8 +143,12 @@
             $statment-> bindParam(":tipo",$tipo);
             $statment-> bindParam(":categoria",$categoria);
             $statment-> bindParam(":precio",$precio);
-            $statment-> bindParam(":tipo",$tipo);
-            $statment-> bindParam(":tipo",$tipo);
+            $statment-> bindParam(":tamano",$tamano);
+            $statment-> bindParam(":ciudad",$ciudad);
+            $statment-> bindParam(":ciudad",$ciudad);
+            
+            $statement ->execute();
+            
 
         }
     }

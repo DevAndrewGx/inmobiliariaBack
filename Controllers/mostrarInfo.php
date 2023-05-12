@@ -79,4 +79,36 @@
         }
 
     }
+
+    function cargarInmueblesUser() {
+        $objConsulta = new Consultas();
+        $conexion = $objConsulta -> consultarInmuebles();
+
+        if(!isset($result)) {
+            echo '<h2>No existen inmuebles registrados</h2>';
+
+            echo '
+                <tr>
+                    <td style="text-align:center">No hay inmuebles registrados</td>
+                </tr>
+
+            ';
+        }else {
+            foreach($result as $f) {
+                
+                echo '
+                <div class="card-inmueble">
+                <img src="'.$f['foto'].'" alt="">
+                <div class="info-card">
+                    <h4>Valor de '.$f['categoria'].':</h4>
+                    <h2>$'.$f['precio'].'</h2>
+                    <p>'.$f['tipo'].'- '.$f['tamano'].'</p>
+                    <p class="direccion">'.$f['ciudad'].'/'.$f['barrio'].'</p>
+                    <a href="UserShowInmueble.php?id='.$f['id'].'">Ver Más</a>
+                </div>
+            </div>
+                ';
+            }
+        }
+    }
 ?>
