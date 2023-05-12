@@ -140,7 +140,7 @@
             $statement = $conexion ->prepare($actualizar);
 
             $statement -> bindParam(":id",$id)
-            $statment-> bindParam(":tipo",$tipo);
+            $statement-> bindParam(":tipo",$tipo);
             $statment-> bindParam(":categoria",$categoria);
             $statment-> bindParam(":precio",$precio);
             $statment-> bindParam(":tamano",$tamano);
