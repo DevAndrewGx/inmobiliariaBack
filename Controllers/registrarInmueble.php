@@ -1,4 +1,5 @@
 <?php
+    require_once("../Models/Conexion.php");
     require_once("../Models/Consultas.php");
 
     $tipo = $_POST['tipo'];
@@ -18,6 +19,10 @@
 
         $objConsultas = new Consultas();
         $result = $objConsultas -> registrarInmueble($tipo, $categoria, $precio, $metros, $ciudad, $barrio, $foto);
+
+        echo '<script>alert("Registro de inmueble exitoso")</script>' ;
+        echo "<script>location.href='../Views/inmoApartamentos.php'</script>";
+
     }else {
         
     }

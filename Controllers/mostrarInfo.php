@@ -1,10 +1,10 @@
 <?php
     function cargarInmuebles() {
         $objConsulta = new Consultas();
-        $conexion = $objConsulta -> consultarInmuebles();
+        $result = $objConsulta -> consultarInmuebles();
 
         if(!isset($result)) {
-            echo '<h2>No existen inmuebles registrados</h2>';
+            // echo '<h2>No existen inmuebles registrados</h2>';
 
             echo '
                 <tr>
@@ -28,7 +28,7 @@
                             </div>
                             <div class="controls">
                                 
-                                <a href=InmoEdit.php? id='.$f['id'].'" class="edit"></a>
+                                <a href="InmoEdit.php? id='.$f['id'].'" class="edit"></a>
                                 <a href="../Controllers/eliminarInmueble.php? id='.$f['id'].'" class="delete"></a>
                             </div>
                         </td>
@@ -44,16 +44,16 @@
 
         $id = $_GET['id'];
 
-        $objConxultas = new Consultas();
-        $resul =$objConsultas -> consultarInmuebleEdit($id); 
+        $objConsultas = new Consultas();
+        $result =$objConsultas -> consultarInmuebleEdit($id); 
 
         foreach($result as $f) {
             echo '
-            <form action="" method = "POST">
+            <form action="../Controllers/editarinmueble.php" method = "POST">
             <input type="number" value="'.$f['id'].'" name="id"style="display:none">
             <div class="select">
             <select name="tipo">
-                <option value=""'.$f['tipo'].'">'.$f['tipo'].'</option>
+                <option value="'.$f['tipo'].'">'.$f['tipo'].'</option>
                 <option value="Apartamento">Apartamento</option>
                 <option value="Aparta Estudio">Aparta Estudio</option>
                 <option value="Casa">Casa</option>
@@ -61,7 +61,7 @@
         </div>
         <div class="select">
             <select name="categoria">
-                <option value=""'.$f['categoria'].'">'.$f['categoria'].'>Selecci</option>
+                <option value=""'.$f['categoria'].'">'.$f['categoria'].'</option>
                 <option value="Arriendo">Arriendo</option>
                 <option value="Venta">Venta</option>
             </select>

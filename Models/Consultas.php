@@ -6,7 +6,7 @@
 
             // Validamos i el usuario se encuentra registrado a partir de un select y  un if para verificar informacion el la base de datos
 
-            $consultar = "SELECT * FROM usuarios WHERE id_usuario = :identificacion OR correo =:email";
+            $consultar = "SELECT * FROM usuarios WHERE id = :identificacion OR correo =:email";
 
             $statement = $conexion-> prepare ($consultar);
 
@@ -30,7 +30,7 @@
                 $conexion = $objConexion ->get_conexion();
 
 
-                $insertar = "INSERT INTO usuarios (id_usuario, nombres, apellidos, telefono, correo, clave, rol) VALUES (:identificacion, :nombres, :apellidos, :telefono, :email, :password, :rol)";
+                $insertar = "INSERT INTO usuarios (id, nombres, apellidos, telefono, correo, clave, rol) VALUES (:identificacion, :nombres, :apellidos, :telefono, :email, :password, :rol)";
 
                 $statement = $conexion -> prepare($insertar);
 
@@ -44,28 +44,24 @@
 
                 $statement->execute();
                 
-                
-
+        
             }
-            
-           
-
-
+        
         }
 
-        public function registrarInmueble($tipo, $caegoria, $precio, $metros, $ciudad, $barrio, $foto) {
+        public function registrarInmueble($tipo, $categoria, $precio, $metros, $ciudad, $barrio, $foto) {
 
             $objConexion = new Conexion();
             $conexion = $objConexion ->get_conexion();
 
-            $insertar = "INSERT INTO inmuebles (tipo, categoria, precio, tamano, ciudad, barrio, foto) VALUES(:tipo, :categoria, :precio, :tamano, :ciudad, :barrio, :foto)" ;
+            $insertar = "INSERT INTO inmuebles (tipo, categoria, precio, tamano, ciudad, barrio, foto) VALUES(:tipo, :categoria, :precio, :tamano, :ciudad, :barrio, :foto)";
 
             $statement = $conexion -> prepare($insertar);
 
             $statement->bindParam(":tipo", $tipo);
             $statement->bindParam(":categoria", $categoria);
             $statement->bindParam(":precio", $precio);
-            $statement->bindParam(":tamano", $tamano);
+            $statement->bindParam(":tamano", $metros);
             $statement->bindParam(":ciudad", $ciudad);
             $statement->bindParam(":barrio", $barrio);
             $statement->bindParam(":foto", $foto);
@@ -76,8 +72,8 @@
         public function consultarInmuebles() {
             $f = null;
 
-            $objeConexion = new Conexion();
-            $conexion = $objConexion -> get_conexion();
+            $objConexion = new Conexion();
+            $conexion = $objConexion ->get_conexion();
 
 
             $consultar = "SELECT * FROM inmuebles ORDER BY id DESC";
@@ -87,20 +83,20 @@
             $statement -> execute();
 
             while($resultado =  $statement->fetch()) {
-                $f[] = $statement;
+                $f[] = $resultado;
             }
 
             return $f;
         }
 
-        public function eliminarInmueblies($id) {
+        public function eliminarInmuebles($id) {
             $objConexion = new Conexion();
             $conexion = $objConexion -> get_conexion();
 
 
             $eliminar = "DELETE FROM inmuebles WHERE id=:id";
 
-            $statement = $conexion -> preapare($eliminar);
+            $statement = $conexion -> prepare($eliminar);
 
             $statement -> bindParam(":id",$id);
 
@@ -122,7 +118,7 @@
             $statement -> execute();
 
             while($resultado =  $statement->fetch()) {
-                $f[] = $statement;
+                $f[] = $resultado;
             }
 
 
@@ -130,7 +126,7 @@
            return $f;
         }
 
-        public function modificarInmuegle($id, $tipo, $categoria, $precio, $metros, $ciudad, $barrio) { 
+        public function modificarInmueble($id, $tipo, $categoria, $precio, $metros, $ciudad, $barrio) { 
             $objConexion =  new Conexion();
             $conexion = $objConexion -> get_conexion();
 
@@ -139,15 +135,16 @@
 
             $statement = $conexion ->prepare($actualizar);
 
-            $statement -> bindParam(":id",$id)
+            $statement-> bindParam(":id",$id);
             $statement-> bindParam(":tipo",$tipo);
-            $statment-> bindParam(":categoria",$categoria);
-            $statment-> bindParam(":precio",$precio);
-            $statment-> bindParam(":tamano",$tamano);
-            $statment-> bindParam(":ciudad",$ciudad);
-            $statment-> bindParam(":ciudad",$ciudad);
+            $statement-> bindParam(":categoria",$categoria);
+            $statement-> bindParam(":precio",$precio);
+            $statement-> bindParam(":tamano",$tamano);
+            $statement-> bindParam(":ciudad",$ciudad);
+            $statement-> bindParam(":ciudad",$ciudad);
             
             $statement ->execute();
+
             
 
         }
