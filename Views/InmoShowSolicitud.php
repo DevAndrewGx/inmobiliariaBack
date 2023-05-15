@@ -1,3 +1,9 @@
+<?php 
+    require_once("../Models/Conexion.php");
+    require_once("../Models/Consultas.php");
+    require_once("../Controllers/mostrarInfo.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Solicitud || Tu Inmueble Ya</title>
-    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="css/master.css">
 </head>
 
 <body>
@@ -16,11 +22,12 @@
             <a href="InmoSolicitudes.html" class="back"></a>
             <a href="index.html" class="close"></a>
         </header>
-        <figure class="photo-preview">
-            <img src="../imgs/inmueble-1.png" alt="">
-        </figure>
+       
         <div class="cont-details">
-            <div>
+            <!-- <div>
+                <figure class="photo-preview">
+                    <img src="imgs/inmueble-1.png" alt="">
+                </figure>
                 <article class="info-name">
                     <p>Apartamento</p>
                 </article>
@@ -47,7 +54,10 @@
                 <article class="info-correo">
                     <p>user@gmail.com</p>
                 </article>
-            </div>
+            </div> -->
+            <?php
+                consultarSolicitudes();
+            ?>
         </div>
 
     </main>

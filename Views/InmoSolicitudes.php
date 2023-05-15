@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Solicitudes || Tu Inmueble Ideal</title>
-    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="css/master.css">
 </head>
 
 <body>
@@ -88,7 +88,7 @@
                         <p>Nombre del Usuario</p>
                     </div>
                     <div class="controls">
-                        <a href="InmoShowSolicitud.html" class="show"></a>
+                        <a href="../Controllers/consultarSolicitudes.php" class="show"></a>
                     </div>
                 </td>
             </tr>

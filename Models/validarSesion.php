@@ -22,13 +22,13 @@
 
                     session_start();
                     // las variables de secion son para el archivo de seguridad de rutas o de permisos de rutas...
-                    $_SESSION['id'] = $f['id_usuario'];
+                    $_SESSION['id'] = $f['id'];
                     $_SESSION['rol'] = $f['rol']; 
                     $_SESSION['auntenticado'] = "SI";
 
-                    if($f['rol'] == "Usuario") {
+                    if($f['rol'] == "1") {
                         echo '<script>alert("Bienvenido Usuario :)")</script>' ;
-                        echo "<script>location.href='../Views/inmoApartam.php'</script>"; 
+                        echo "<script>location.href='../Views/UserDashboard.php'</script>"; 
                     }else { 
                         echo '<script>alert("Bienvenido Inmobiliaria")</script>' ;
                         echo "<script>location.href='../Views/inmoApartamentos.php'</script>"; 

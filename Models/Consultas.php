@@ -144,9 +144,84 @@
             $statement-> bindParam(":barrio",$barrio);
             
             $statement ->execute();
+        }
 
-            
+        public function consultarInmueblesUser($id) {
 
+            $objConexion =  new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+            $consultar = "SELECT * FROM inmuebles WHERE id=:id ";
+            $statement = $conexion -> prepare($consultar);
+            $statement -> bindParam(":id",$id);
+            $statement -> execute();
+
+            while($resultado =  $statement->fetch()) {
+                $f[] = $resultado;
+            }
+           return $f;
+        }
+
+        public function registrarSolicitud($id_inm, $id_user,$fecha) {
+            $objConexion = new Conexion();
+            $conexion = $objConexion ->get_conexion();
+
+            $insertar = "INSERT INTO solicitudes (id_inm, id_user, fecha) VALUES(:id_inm, :id_user, :fecha)";
+
+            $statement = $conexion -> prepare($insertar);
+
+            $statement->bindParam(":id_inm", $id_inm);
+            $statement->bindParam(":id_user", $id_user);
+            $statement->bindParam(":fecha", $fecha);
+
+            $statement -> execute();
+        }
+
+        public function consultarSolicitudes($id) {
+            $objConexion =  new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria FROM solicitudes WHERE id=:id ";
+            $statement = $conexion -> prepare($consultar);
+            $statement -> bindParam(":id",$id);
+            $statement -> execute();
+
+            while($resultado =  $statement->fetch()) {
+                $f[] = $resultado;
+            }
+           return $f;
+        }
+
+        public function consultarSolicitudDetalle($id) {
+            $objConexion =  new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria, inmuebles.precio, inmuebles.barrio, inmuebles.ciudad, solicitudes.fecha, usuarios.nombres, usuarios.telefono, usuarios.correo FROM solicitudes JOIN inmuebles on solicitudes.id_sol = inmuebles.id JOIN usuarios on usuarios.id = solicitudes.id_user WHERE solicitudes.id_sol = :id";
+
+            $statement = $conexion -> prepare($consultar);
+            $statement -> bindParam(":id",$id);
+            $statement -> execute();
+
+            while($resultado =  $statement->fetch()) {
+                $f[] = $resultado;
+            }
+            return $f;    
+        }
+
+        public function consultarDetalle() {
+            $objConexion =  new Conexion();
+            $conexion = $objConexion -> get_conexion();
+
+            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria,  inmuebles.barrio, inmuebles.ciudad,  usuarios.nombres FROM solicitudes JOIN  usuarios on usuarios.id = solicitudes.id_user;"
+
+            $statement = $conexion -> prepare($consultar);
+            $statement -> bindParam(":id",$id);
+            $statement -> execute();
+
+            while($resultado =  $statement->fetch()) {
+                $f[] = $resultado;
+            }
+           return $f; 
         }
     }
 

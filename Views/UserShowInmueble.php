@@ -1,3 +1,8 @@
+<?php 
+    require_once("../Models/Conexion.php");
+    require_once("../Models/Consultas.php");
+    require_once("../Controllers/mostrarInfo.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,21 +19,13 @@
             <a href="UserDashboard.html" class="back"></a>
             <a href="index.html" class="close"></a>
         </header>
-        <figure class="photo-preview">
+        <!-- <figure class="photo-preview">
             <img src="../imgs/inmueble-1.png" alt="">
-        </figure>
-        <div class="cont-details">
-            <div>
-                <article class="info-name"><p>Apartamento</p></article>
-                <article class="info-category"><p>Arriendo</p></article>
-                <article class="info-precio"><p>$2.400.000</p></article>
-                <article class="info-direccion"><p>Engativa/Bogotá</p></article>
-                <article class="info-tamano"><p>80M2</p></article>
-
-                <a href="#" class="btn-home">Solictar cita</a>
-
-            </div>
-        </div>
+        </figure> -->
+       
+        <?php
+                cargarInmuebleDetalles();                     
+            ?>
         
     </main>
 </body>

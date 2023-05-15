@@ -111,4 +111,135 @@
             }
         }
     }
+    
+    function cargarInmuebleDetalles() {
+        $objConsulta = new Consultas();
+        $id = $_GET['id'];
+        $result = $objConsulta -> consultarInmueblesUser($id);
+
+        if(!isset($result)) {
+            ;
+
+            echo '
+                <tr>
+                    <td style="text-align:center">No hay inmuebles registrados</td>
+                </tr>
+
+            ';
+        }else {
+            foreach($result as $f) {
+                
+                echo '
+                <div class="cont-details">
+                    <div>
+                    <article class="info-name"><p>'.$f['tipo'].'</p></article>
+                    <article class="info-category"><p>'.$f['categoria'].'</p></article>
+                    <article class="info-precio"><p>$'.$f['precio'].'</p></article>
+                    <article class="info-direccion"><p>'.$f['ciudad'].'/'.$f['barrio'].'</p></article>
+                    <article class="info-tamano"><p>'.$f['tamano'].'</p></article>
+    
+                    <a href="../Controllers/registrarSolicitud.php?id='.$f['id'].'" class="btn-home">Solictar cita</a>
+                </div>
+                </div>
+                
+           
+                ';
+            }
+        }
+    }
+
+    function consultarSolicitudesDetalles() {
+        $objConsulta = new Consultas();
+        $id = $_GET['id'];
+        $result = $objConsulta -> consultarSolicitudDetalle($id);
+
+        
+        if(!isset($result)) {
+            ;
+
+            echo '
+                <tr>
+                    <td style="text-align:center">No hay solicitudes registradas</td>
+                </tr>
+
+            ';
+        }else {
+            foreach($result as $f) {
+                
+                echo '
+            <div>
+                <figure class="photo-preview">
+                    <img src="'.$f['foto'].'" alt="">
+                </figure>
+                <article class="info-name">
+                    <p>'.$f['tipo'].'</p>
+                </article>
+                <article class="info-category">
+                    <p>'.$f['categoria'].'</p>
+                </article>
+                <article class="info-precio">
+                    <p>$'.$f['precio'].'</p>
+                </article>
+                <article class="info-direccion">
+                    <p>'.$f['ciudad'].'/'.$f['barrio'].'</p>
+                </article>
+                <hr>
+                <br>
+                <article class="info-fecha">
+                    <p>'.$f['fecha'].'</p>
+                </article>
+                <article class="info-usuario">
+                    <p>'.$f['nombres'].'</p>
+                </article>
+                <article class="info-telefono">
+                    <p>'.$f['telefono'].'</p>
+                </article>
+                <article class="info-correo">
+                    <p>'.$f['correo'].'</p>
+                </article>
+            </div>
+                
+                ';
+            }
+        }
+
+        function consultarSolicitud() {
+            $objConsulta = new Consultas();
+            $id = $_GET['id'];
+            $result = $objConsulta -> consultarSolicitudes();
+
+            if(!isset($result)) {
+                ;
+    
+                echo '
+                    <tr>
+                        <td style="text-align:center">No hay solicitudes registradas</td>
+                    </tr>
+    
+                ';
+            }else {
+                foreach($result as $f) {
+                    
+                    echo '
+                    <tr>
+                        <td>
+                            <figure class="photo">
+                                <img src="'.$f['foto'].'" alt="">
+                            </figure>
+                            <div class="info">
+                                <h3>'.$f['tipo'].'</h3>                        
+                                <p>'.$f['ciudad'].'/'.$f['barrio'].'</p>
+                                <p>'.$f['nombres'].'</p>
+                            </div>
+                            <div class="controls">
+                                <a href="InmoShowSolicitud.html" class="show"></a>
+                            </div>
+                        </td>
+                    </tr>
+               
+                    ';
+                }
+            }
+        }
+    }
 ?>
