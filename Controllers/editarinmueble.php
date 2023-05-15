@@ -1,13 +1,13 @@
 <?php
     require_once("../Models/Conexion.php");
     require_once("../Models/Consultas.php");
-    
+
     $objConsulta = new Consultas();
     $id = $_POST['id'];
     $tipo = $_POST['tipo'];
     $categoria = $_POST['categoria'];
     $precio = $_POST['precio'];
-    $metros = $_POST['metros'];
+    $metros = $_POST['tamano'];
     $ciudad = $_POST['ciudad'];
     $barrio = $_POST['barrio'];
 

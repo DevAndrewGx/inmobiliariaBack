@@ -82,7 +82,7 @@
 
     function cargarInmueblesUser() {
         $objConsulta = new Consultas();
-        $conexion = $objConsulta -> consultarInmuebles();
+        $result = $objConsulta -> consultarInmuebles();
 
         if(!isset($result)) {
             echo '<h2>No existen inmuebles registrados</h2>';

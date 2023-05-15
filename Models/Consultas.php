@@ -139,9 +139,9 @@
             $statement-> bindParam(":tipo",$tipo);
             $statement-> bindParam(":categoria",$categoria);
             $statement-> bindParam(":precio",$precio);
-            $statement-> bindParam(":tamano",$tamano);
+            $statement-> bindParam(":metros",$metros);
             $statement-> bindParam(":ciudad",$ciudad);
-            $statement-> bindParam(":ciudad",$ciudad);
+            $statement-> bindParam(":barrio",$barrio);
             
             $statement ->execute();
 
