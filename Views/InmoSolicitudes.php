@@ -1,3 +1,12 @@
+<?php 
+    require_once("../Models/Conexion.php");
+    require_once("../Models/Consultas.php");
+    require_once("../Controllers/mostrarInfo.php");
+    require_once("../Models/validarSesion.php");
+    require_once("../Models/permisoInmo.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +26,10 @@
             <a href="index.html" class="close"></a>
         </header>
         <table>
-            <tr>
+            <?php
+                consultarSolicitud();
+            ?>
+            <!-- <tr>
                 <td>
                     <figure class="photo">
                         <img src="../imgs/inmueble-1.png" alt="">
@@ -91,7 +103,7 @@
                         <a href="../Controllers/consultarSolicitudes.php" class="show"></a>
                     </div>
                 </td>
-            </tr>
+            </tr> -->
         </table>
     </main>
 </body>

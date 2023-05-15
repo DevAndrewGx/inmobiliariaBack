@@ -2,6 +2,8 @@
     require_once("../Models/Conexion.php");
     require_once("../Models/Consultas.php");
     require_once("../Controllers/mostrarInfo.php");
+    require_once("../Models/validarSesion.php");
+    require_once("../Models/permisoInmo.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@
         <header>
             <h2>Administrar Inmuebles</h2>
             <a href="InmoDashboard.html" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../Controllers/cerrarSecion.php"  class="close"></a>
         </header>
         <a href="InmoAdd.php" class="btn-home adicionar">+ Adicionar</a>
         <table>

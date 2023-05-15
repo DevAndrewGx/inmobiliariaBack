@@ -2,6 +2,9 @@
     require_once("../Models/Conexion.php");
     require_once("../Models/Consultas.php");
     require_once("../Controllers/mostrarInfo.php");
+    require_once("../Models/validarSesion.php");
+    require_once("../Models/permisoInmo.php");
+    
 ?>
 
 

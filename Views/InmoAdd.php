@@ -1,3 +1,8 @@
+<?php
+    require_once("../Models/validarSecion.php");
+    require_once("../Models/permisoInmo.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

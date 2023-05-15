@@ -42,5 +42,12 @@
                 echo "<script>location.href='../Views/login.php'</script>";
             }
         }
+
+        public function cerrarSesion() {
+            session_start();
+            session_destroy();
+
+            echo "<script>location.href='../Views/login.php'</script>";
+        }
     }
 ?>

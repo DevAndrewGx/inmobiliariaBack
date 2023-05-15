@@ -212,16 +212,15 @@
             $objConexion =  new Conexion();
             $conexion = $objConexion -> get_conexion();
 
-            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria,  inmuebles.barrio, inmuebles.ciudad,  usuarios.nombres FROM solicitudes JOIN  usuarios on usuarios.id = solicitudes.id_user;"
+            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria, inmuebles.barrio, inmuebles.ciudad, usuarios.nombres FROM inmuebles JOIN usuarios on usuarios.id = inmuebles.id";
 
             $statement = $conexion -> prepare($consultar);
-            $statement -> bindParam(":id",$id);
             $statement -> execute();
 
             while($resultado =  $statement->fetch()) {
                 $f[] = $resultado;
             }
-           return $f; 
+            return $f; 
         }
     }
 

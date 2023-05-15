@@ -2,6 +2,8 @@
     require_once("../Models/Conexion.php");
     require_once("../Models/Consultas.php");
     require_once("../Controllers/mostrarInfo.php");
+    require_once("../Models/validarSesion.php");
+    require_once("../Models/permisosUser.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@
         <!-- <figure class="photo-preview">
             <img src="../imgs/inmueble-1.png" alt="">
         </figure> -->
-       
+        
         <?php
                 cargarInmuebleDetalles();                     
             ?>
