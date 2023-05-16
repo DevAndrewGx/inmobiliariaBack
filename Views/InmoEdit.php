@@ -22,7 +22,7 @@
         <header>
             <h2>Modificar Inmueble</h2>
             <a href="InmoApartamentos.html" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../Controllers/cerrarSecion.php" class="close"></a>
         </header>
 
         <?php

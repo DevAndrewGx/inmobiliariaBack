@@ -202,43 +202,41 @@
                 ';
             }
         }
+    }
+    function consultarSolicitud() {
+        $objConsulta = new Consultas();
+        $result = $objConsulta -> consultarDetalle();
 
-        function consultarSolicitud() {
-            $objConsulta = new Consultas();
-            $id = $_GET['id'];
-            $result = $objConsulta -> consultarSolicitudes();
+        if(!isset($result)) {
+            ;
 
-            if(!isset($result)) {
-                ;
-    
+            echo '
+                <tr>
+                    <td style="text-align:center">No hay solicitudes registradas</td>
+                </tr>
+
+            ';
+        }else {
+            foreach($result as $f) {
+                
                 echo '
-                    <tr>
-                        <td style="text-align:center">No hay solicitudes registradas</td>
-                    </tr>
-    
+                <tr>
+                    <td>
+                        <figure class="photo">
+                            <img src="'.$f['foto'].'" alt="">
+                        </figure>
+                        <div class="info">
+                            <h3>'.$f['tipo'].'</h3>                        
+                            <p>'.$f['ciudad'].'/'.$f['barrio'].'</p>
+                            <p>'.$f['nombres'].'</p>
+                        </div>
+                        <div class="controls">
+                            <a href="InmoShowSolicitud.html" class="show"></a>
+                        </div>
+                    </td>
+                </tr>
+           
                 ';
-            }else {
-                foreach($result as $f) {
-                    
-                    echo '
-                    <tr>
-                        <td>
-                            <figure class="photo">
-                                <img src="'.$f['foto'].'" alt="">
-                            </figure>
-                            <div class="info">
-                                <h3>'.$f['tipo'].'</h3>                        
-                                <p>'.$f['ciudad'].'/'.$f['barrio'].'</p>
-                                <p>'.$f['nombres'].'</p>
-                            </div>
-                            <div class="controls">
-                                <a href="InmoShowSolicitud.html" class="show"></a>
-                            </div>
-                        </td>
-                    </tr>
-               
-                    ';
-                }
             }
         }
     }

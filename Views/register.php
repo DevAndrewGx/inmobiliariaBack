@@ -23,8 +23,8 @@
             <div class="select">
                 <select name="rol">
                     <option value="">Seleccione Rol</option>
-                    <option value="1">Usuario</option>
-                    <option value="2">Inmobiliaria</option>
+                    <option value="Usuario">Usuario</option>
+                    <option value="Inmobiliaria">Inmobiliaria</option>
                 </select>
             </div>
             <button>Crear Mi Cuenta</button>

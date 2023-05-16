@@ -22,7 +22,7 @@
         <header>
             <h2>Consultar Solicitud</h2>
             <a href="InmoSolicitudes.html" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../Controllers/cerrarSecion.php" class="close"></a>
         </header>
        
         <div class="cont-details">

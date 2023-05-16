@@ -1,5 +1,5 @@
 <?php
-    require_once("../Models/validarSecion.php");
+    require_once("../Models/validarSesion.php");
     require_once("../Models/permisoInmo.php");
 
 ?>
@@ -19,7 +19,7 @@
         <header>
             <h2>Adicionar Inmueble</h2>
             <a href="InmoApartamentos.php" class="back"></a>
-            <a href="index.php" class="close"></a>
+            <a href="../Controllers/cerrarSecion.php" class="close"></a>
         </header>
         <form action="../Controllers/registrarInmueble.php" method="POST" enctype="multipart/form-data">
             

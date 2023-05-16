@@ -18,7 +18,7 @@
     <main class="show">
         <header>
             <h2>Consultar Inmueble</h2>
-            <a href="UserDashboard.html" class="back"></a>
+            <a href="../Controllers/cerrarSecion.php" class="back"></a>
             <a href="index.html" class="close"></a>
         </header>
         <!-- <figure class="photo-preview">

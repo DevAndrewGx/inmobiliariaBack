@@ -211,8 +211,9 @@
         public function consultarDetalle() {
             $objConexion =  new Conexion();
             $conexion = $objConexion -> get_conexion();
+            $f = null;
 
-            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria, inmuebles.barrio, inmuebles.ciudad, usuarios.nombres FROM inmuebles JOIN usuarios on usuarios.id = inmuebles.id";
+            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria, inmuebles.barrio, inmuebles.ciudad, usuarios.nombres FROM solicitudes JOIN usuarios on usuarios.id = solicitudes.id_sol JOIN inmuebles on solicitudes.id_sol = inmuebles.id";
 
             $statement = $conexion -> prepare($consultar);
             $statement -> execute();

@@ -26,7 +26,7 @@
                     $_SESSION['rol'] = $f['rol']; 
                     $_SESSION['auntenticado'] = "SI";
 
-                    if($f['rol'] == "1") {
+                    if($f['rol'] == "Usuario") {
                         echo '<script>alert("Bienvenido Usuario :)")</script>' ;
                         echo "<script>location.href='../Views/UserDashboard.php'</script>"; 
                     }else { 
@@ -46,7 +46,6 @@
         public function cerrarSesion() {
             session_start();
             session_destroy();
-
             echo "<script>location.href='../Views/login.php'</script>";
         }
     }

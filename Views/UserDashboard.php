@@ -22,7 +22,7 @@
         <header>
             <h2>Inmuebles Disponibles</h2>
             
-            <a href="index.html" class="close"></a>
+            <a href="../Controllers/cerrarSecion.php" class="close"></a>
         </header>
         <div class="contCards">
             <?php

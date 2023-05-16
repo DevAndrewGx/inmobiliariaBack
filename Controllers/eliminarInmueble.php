@@ -7,5 +7,9 @@
     $id_inm = $_GET['id'];
     
     $messaje = $consultas -> eliminarInmuebles($id_inm);
+
+    echo '<script>alert("Mueble Eliminado Exitosamente")</script>' ;
+    echo "<script>location.href='../Views/inmoApartamentos.php'</script>";
+
     
 ?>

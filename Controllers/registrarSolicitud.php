@@ -12,4 +12,8 @@
 
     $objConsultas = new Consultas();
     $result = $objConsultas -> registrarSolicitud($id_inm, $id_user,$fecha);
+
+    echo '<script>alert("Registro de solicitud exitoso")</script>' ;
+    echo "<script>location.href='../Views/UserDashboard.php'</script>";
+
 ?>

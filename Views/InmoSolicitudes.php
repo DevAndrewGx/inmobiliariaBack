@@ -23,7 +23,7 @@
         <header>
             <h2>Administrar Solicitudes</h2>
             <a href="InmoDashboard.html" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../Controllers/cerrarSecion.php" class="close"></a>
         </header>
         <table>
             <?php
