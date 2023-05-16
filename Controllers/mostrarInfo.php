@@ -130,6 +130,9 @@
             foreach($result as $f) {
                 
                 echo '
+                <figure class="photo-preview">
+                        <img src="'.$f['foto'].'" alt="">
+                    </figure>
                 <div class="cont-details">
                     <div>
                     <article class="info-name"><p>'.$f['tipo'].'</p></article>
@@ -159,7 +162,7 @@
 
             echo '
                 <tr>
-                    <td style="text-align:center">No hay solicitudes registradas</td>
+                    <td style="text-align:center">No hay solicitudes registradass</td>
                 </tr>
 
             ';
@@ -167,37 +170,40 @@
             foreach($result as $f) {
                 
                 echo '
-            <div>
                 <figure class="photo-preview">
                     <img src="'.$f['foto'].'" alt="">
                 </figure>
-                <article class="info-name">
-                    <p>'.$f['tipo'].'</p>
-                </article>
-                <article class="info-category">
-                    <p>'.$f['categoria'].'</p>
-                </article>
-                <article class="info-precio">
-                    <p>$'.$f['precio'].'</p>
-                </article>
-                <article class="info-direccion">
-                    <p>'.$f['ciudad'].'/'.$f['barrio'].'</p>
-                </article>
-                <hr>
-                <br>
-                <article class="info-fecha">
-                    <p>'.$f['fecha'].'</p>
-                </article>
-                <article class="info-usuario">
-                    <p>'.$f['nombres'].'</p>
-                </article>
-                <article class="info-telefono">
-                    <p>'.$f['telefono'].'</p>
-                </article>
-                <article class="info-correo">
-                    <p>'.$f['correo'].'</p>
-                </article>
-            </div>
+                 <div class="cont-details">
+                    <div>
+                        <article class="info-name">
+                            <p>'.$f['tipo'].'</p>
+                        </article>
+                        <article class="info-category">
+                            <p>'.$f['categoria'].'</p>
+                        </article>
+                        <article class="info-precio">
+                            <p>$'.$f['precio'].'</p>
+                        </article>
+                        <article class="info-direccion">
+                            <p>'.$f['ciudad'].'/'.$f['barrio'].'</p>
+                        </article>
+                        <hr>
+                        <br>
+                        <article class="info-fecha">
+                            <p>'.$f['fecha'].'</p>
+                        </article>
+                        <article class="info-usuario">
+                            <p>'.$f['nombres'].'</p>
+                        </article>
+                        <article class="info-telefono">
+                            <p>'.$f['telefono'].'</p>
+                        </article>
+                        <article class="info-correo">
+                            <p>'.$f['correo'].'</p>
+                        </article>
+                    </div>
+                </div>
+            
                 
                 ';
             }
@@ -231,7 +237,7 @@
                             <p>'.$f['nombres'].'</p>
                         </div>
                         <div class="controls">
-                            <a href="InmoShowSolicitud.html" class="show"></a>
+                            <a href="InmoShowSolicitud.php?id='.$f['id_sol'].'" class="show"></a>
                         </div>
                     </td>
                 </tr>

@@ -195,8 +195,9 @@
         public function consultarSolicitudDetalle($id) {
             $objConexion =  new Conexion();
             $conexion = $objConexion -> get_conexion();
+            $f = null;
 
-            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria, inmuebles.precio, inmuebles.barrio, inmuebles.ciudad, solicitudes.fecha, usuarios.nombres, usuarios.telefono, usuarios.correo FROM solicitudes JOIN inmuebles on solicitudes.id_sol = inmuebles.id JOIN usuarios on usuarios.id = solicitudes.id_user WHERE solicitudes.id_sol = :id";
+            $consultar = "SELECT  inmuebles.foto,inmuebles.tipo, inmuebles.categoria, inmuebles.precio, inmuebles.barrio, inmuebles.ciudad, solicitudes.fecha, usuarios.nombres, usuarios.telefono, usuarios.correo FROM solicitudes JOIN inmuebles on solicitudes.id_inm = inmuebles.id JOIN usuarios on usuarios.id = solicitudes.id_user WHERE solicitudes.id_sol = :id";
 
             $statement = $conexion -> prepare($consultar);
             $statement -> bindParam(":id",$id);
@@ -213,7 +214,7 @@
             $conexion = $objConexion -> get_conexion();
             $f = null;
 
-            $consultar = "SELECT inmuebles.tipo, inmuebles.categoria, inmuebles.barrio, inmuebles.ciudad, usuarios.nombres FROM solicitudes JOIN usuarios on usuarios.id = solicitudes.id_sol JOIN inmuebles on solicitudes.id_sol = inmuebles.id";
+            $consultar = "SELECT solicitudes.id_sol,inmuebles.tipo, inmuebles.categoria, inmuebles.foto, inmuebles.barrio, inmuebles.ciudad, usuarios.nombres FROM solicitudes JOIN usuarios on usuarios.id = solicitudes.id_user JOIN inmuebles on solicitudes.id_inm = inmuebles.id";
 
             $statement = $conexion -> prepare($consultar);
             $statement -> execute();

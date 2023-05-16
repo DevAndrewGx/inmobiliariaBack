@@ -25,42 +25,10 @@
             <a href="../Controllers/cerrarSecion.php" class="close"></a>
         </header>
        
-        <div class="cont-details">
-            <!-- <div>
-                <figure class="photo-preview">
-                    <img src="imgs/inmueble-1.png" alt="">
-                </figure>
-                <article class="info-name">
-                    <p>Apartamento</p>
-                </article>
-                <article class="info-category">
-                    <p>Arriendo</p>
-                </article>
-                <article class="info-precio">
-                    <p>$2.400.000</p>
-                </article>
-                <article class="info-direccion">
-                    <p>Engativa/Bogotá</p>
-                </article>
-                <hr>
-                <br>
-                <article class="info-fecha">
-                    <p>2023-05-05</p>
-                </article>
-                <article class="info-usuario">
-                    <p>Nombre Usuario</p>
-                </article>
-                <article class="info-telefono">
-                    <p>3212344455</p>
-                </article>
-                <article class="info-correo">
-                    <p>user@gmail.com</p>
-                </article>
-            </div> -->
-            <?php
+       
+        <?php
                 consultarSolicitudesDetalles();
             ?>
-        </div>
 
     </main>
 </body>
