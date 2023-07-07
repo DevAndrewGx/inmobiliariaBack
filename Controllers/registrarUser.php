@@ -11,7 +11,7 @@
     $rol = $_POST["rol"];
 
     if(strlen($identidicacion > 0) && strlen($nombres > 0) && strlen($apellidos > 0) &&  strlen($telefono > 0) && strlen($correo > 0) && strlen($clave > 0) && strlen($rol > 0)) {
-        // para  se usa md5
+        // para encriptar  se usa md5
         $claveMD = md5($clave);
        
 

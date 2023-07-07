@@ -61,7 +61,7 @@
         </div>
         <div class="select">
             <select name="categoria">
-                <option value=""'.$f['categoria'].'">'.$f['categoria'].'</option>
+                <option value="'.$f['categoria'].'">'.$f['categoria'].'</option>
                 <option value="Arriendo">Arriendo</option>
                 <option value="Venta">Venta</option>
             </select>
@@ -141,7 +141,7 @@
                     <article class="info-direccion"><p>'.$f['ciudad'].'/'.$f['barrio'].'</p></article>
                     <article class="info-tamano"><p>'.$f['tamano'].'</p></article>
     
-                    <a href="../Controllers/registrarSolicitud.php?id='.$f['id'].'" class="btn-home">Solictar cita</a>
+                    <a href="../Controllers/registrarSolicitud.php?id='.$f['id_inm'].'" class="btn-home">Solictar cita</a>
                 </div>
                 </div>
                 

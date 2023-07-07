@@ -1,6 +1,6 @@
 <?php
 
-    
+    // para validar la secion tenemos que crear otro archivo aparte
     class Sesion {
         public function iniciarSecion($email, $clave) {
             $objConexion = new Conexion();
